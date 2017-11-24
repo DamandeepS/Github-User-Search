@@ -1,0 +1,113 @@
+main .welcome-wrapper {
+    padding: 20px 0;
+
+}
+
+main .welcome-wrapper h3 {
+    text-align: center;
+}
+
+.mdl-navigation__link > i {
+    margin-right: 10px;
+}
+
+#search-panel {
+
+    margin: 60px auto;
+    max-width: 300px;
+}
+
+main #search-btn {
+    right: 0;
+}
+
+main #search-suggestions {
+    margin: -20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.is-favorite {
+    color: #d61111;
+}
+
+.user-card-wide.mdl-card {
+    max-width: 512px;
+    margin: 10px auto
+}
+
+.user-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 220px;
+    background-color: #301;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+.user-card-wide > .mdl-card__menu {
+    color: #fff;
+    z-index: 1;
+}
+
+img.avatar {
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+span.info {
+    font-weight: 400;
+    font-size: 1em;
+    min-width: 100px;
+    display: inline-block;
+}
+
+span.detail {
+    font-weight: 600;
+    color: #000;
+}
+
+.loader {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    color: #121212;
+}
+
+.loader > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.no-results-banner,
+.get-results-later,
+#no-favorites-banner {
+    text-align: center;
+    font-weight: 100;
+    font-size: 1.4rem;
+}
+
+body.loader-active .loader {
+    display: block;
+}
+
+body.loader-active .loader + * {
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+
+    main .search-panel {
+        margin: 0 auto;
+    }
+
+}

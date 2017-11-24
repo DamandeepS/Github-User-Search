@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Github User Search</title>
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="theme-color" content="#3f51b5">
+
+    <link rel="stylesheet" href="styles/material.indigo-pink.min.css" async>
+    <script defer src="js/material.min.js"></script>
+    <link rel="stylesheet" href="styles/index.css" async>
+</head>
+
+<body class='loader-active'>
+    <!--loader-->
+
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Github User Search</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link show-favorites" href="#">Favorites</a>
+                    <a class="mdl-navigation__link" href="https://github.com/DamandeepS">Author</a>
+                </nav>
+
+                    <label class="mdl-button add-to-homescreen hidden mdl-js-button mdl-button--icon"
+                           for="fixed-header-drawer-exp">
+                      <i class="material-icons">get_app</i>
+                    </label>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Search</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link show-favorites" href="#"><i class="material-icons ">star</i> Favorites</a>
+                <a class="mdl-navigation__link" href="https://github.com/DamandeepS"><i class="material-icons ">info</i> Author</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <!-- Your content goes here -->
+                <div class="welcome-wrapper">
+                    <h3>Welcome to Github User search</h3>
+                    <div class="loader">
+                        <div>
+                            <div class="mdl-spinner mdl-js-spinner is-active"></div>
+                            <p>Loading</p>
+                        </div>
+                    </div>
+                    <div id="search-panel">
+                        <div class="mdl-textfield query-input mdl-js-textfield">
+                            <input id="query-input" class="mdl-textfield__input" type="text">
+                            <label class="mdl-textfield__label" for="sample1">Search Text...</label>
+
+                            <button id="search-btn" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                            <i class="material-icons">search</i>
+                        </button>
+                        </div>
+                        <!-- Colored icon button -->
+                        <h3 class="no-results-banner hidden">No Results found</h3>
+                        <h3 class="get-results-later hidden">We are unable to fetch results<span class="get-notification hidden">, <a class="link" href="#">Get a notification</a> when they're available</h3></span>
+                        <div id="search-suggestions" class="mdl-list">
+
+                        </div>
+                    </div>
+
+                    <div id="user-info-panel" class="hidden">
+                        <!-- Wide card with share menu button -->
+
+                        <div class="user-card-wide mdl-card mdl-shadow--3dp">
+                            <div class="mdl-card__title">
+                                <img class="avatar" />
+                                <h2 class="mdl-card__title-text fullname">
+                                    Damandeep Singh</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <p><span class="info">Username</span><span class="detail login">DamandeepS</span></p>
+                                <p><span class="info">Followers</span><span class="detail followers">4</span></p>
+                                <p><span class="info">Public Repos</span><span class="detail repos">21</span></p>
+                                <p><span class="info">Bio</span><span class="detail bio"></span></p>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <a class="html-url mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href='#'>Open Profile</a>
+                                <a class="close mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href='#'>Close</a>
+                            </div>
+                            <div class="mdl-card__menu">
+                                <button class="mdl-button favorite mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                  <i class="material-icons">star</i>
+                                </button>
+                                <button class="mdl-button share mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                  <i class="material-icons">share</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="favorite-users-panel" class="hidden">
+                        <a class="goto-search" href="#">Back to Search</a>
+                        <div id="favorites-list" class="mdl-list">
+
+                        </div>
+                        <h3 id="no-favorites-banner">No Favorites</h3>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Loading at bottom -->
+    <script src="js/material.min.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('sw.js', {
+                    scope: "./"
+                })
+                .then(() => {
+                    console.log("Service Worker Registered");
+                }).catch((err) => {
+                    console.warn('failed to install error: ' + err)
+                });
+        }
+
+    </script>
+</body>
+
+</html>
